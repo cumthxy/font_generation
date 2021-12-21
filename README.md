@@ -7,61 +7,29 @@ Collection of PyTorch or tensorflow implementations of Font Generation based on 
 ## Table of Contents
   * [Implementations](#implementations)
     + [DG-Font](#DG-Font)
-    + [Adversarial Autoencoder](#adversarial-autoencoder)
-    + [BEGAN](#began)
-    + [BicycleGAN](#bicyclegan)
-    + [Boundary-Seeking GAN](#boundary-seeking-gan)
-    + [Cluster GAN](#cluster-gan)
-    + [Conditional GAN](#conditional-gan)
-    + [Context-Conditional GAN](#context-conditional-gan)
-    + [Context Encoder](#context-encoder)
-    + [Coupled GAN](#coupled-gan)
-    + [CycleGAN](#cyclegan)
-    + [Deep Convolutional GAN](#deep-convolutional-gan)
-    + [DiscoGAN](#discogan)
-    + [DRAGAN](#dragan)
-    + [DualGAN](#dualgan)
-    + [Energy-Based GAN](#energy-based-gan)
-    + [Enhanced Super-Resolution GAN](#enhanced-super-resolution-gan)
-    + [GAN](#gan)
-    + [InfoGAN](#infogan)
-    + [Least Squares GAN](#least-squares-gan)
-    + [MUNIT](#munit)
-    + [Pix2Pix](#pix2pix)
-    + [PixelDA](#pixelda)
-    + [Relativistic GAN](#relativistic-gan)
-    + [Semi-Supervised GAN](#semi-supervised-gan)
-    + [Softmax GAN](#softmax-gan)
-    + [StarGAN](#stargan)
-    + [Super-Resolution GAN](#super-resolution-gan)
-    + [UNIT](#unit)
-    + [Wasserstein GAN](#wasserstein-gan)
-    + [Wasserstein GAN GP](#wasserstein-gan-gp)
-    + [Wasserstein GAN DIV](#wasserstein-gan-div)
+
+      
 
 
 
 ## Implementations   
 ### DG-Font
-_Auxiliary Classifier Generative Adversarial Network_
+DG-Font: Deformable Generative Networks for Unsupervised Font Generation
 
 #### Authors
-Augustus Odena, Christopher Olah, Jonathon Shlens
+Yangchen Xie Xinyuan Chen* Li Sun Yue Lu
+
+Shanghai Key Laboratory of Multidimensional Information Processing, East China Normal University, 200241 Shanghai, China
 
 #### Abstract
-Synthesizing high resolution photorealistic images has been a long-standing challenge in machine learning. In this paper we introduce new methods for the improved training of generative adversarial networks (GANs) for image synthesis. We construct a variant of GANs employing label conditioning that results in 128x128 resolution image samples exhibiting global coherence. We expand on previous work for image quality assessment to provide two new analyses for assessing the discriminability and diversity of samples from class-conditional image synthesis models. These analyses demonstrate that high resolution samples provide class information not present in low resolution samples. Across 1000 ImageNet classes, 128x128 samples are more than twice as discriminable as artificially resized 32x32 samples. In addition, 84.7% of the classes have samples exhibiting diversity comparable to real ImageNet data.
+Font generation is a challenging problem especially for some writing systems that consist of a large number of characters and has attracted a lot of attention in recent years. However, existing methods for font generation are often in supervised learning. They require a large number of paired data, which is labor-intensive and expensive to collect. Besides, common image-to-image translation models often define style as the set of textures and colors, which cannot be directly applied to font generation. To address these problems, we propose novel deformable generative networks for unsupervised font generation (DGFont). We introduce a feature deformation skip connection (FDSC) which predicts pairs of displacement maps and employs the predicted maps to apply deformable convolution to the low-level feature maps from the content encoder. The outputs of FDSC are fed into a mixer to generate the final results. Taking advantage of FDSC, the mixer outputs a high-quality character with a complete structure. To further improve the quality of generated images, we use three deformable convolution layers in the content encoder to learn style-invariant feature representations. Experiments demonstrate that our model generates characters in higher quality than state-of-art methods. 
 
-[[Paper]](https://arxiv.org/abs/1610.09585) [[Code]](implementations/acgan/acgan.py)
+[[Paper]](https://arxiv.org/abs/2104.03064) [[Code]](https://github.com/ecnuycxie/DG-Font)
 
-#### Run Example
-```
-$ cd implementations/acgan/
-$ python3 acgan.py
-```
+![image-20211221201016751](https://gitee.com/cumthxy/Image/raw/master/img/image-20211221201016751.png)
 
-<p align="center">
-    <img src="assets/acgan.gif" width="360"\>
-</p>
+
+
 
 ### Adversarial Autoencoder
 _Adversarial Autoencoder_
