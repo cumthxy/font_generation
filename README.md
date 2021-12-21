@@ -1,16 +1,12 @@
-<p align="center"><img src="assets/logo.png" width="480"\></p>
 
-**This repository has gone stale as I unfortunately do not have the time to maintain it anymore. If you would like to continue the development of it as a collaborator send me an email at eriklindernoren@gmail.com.**
 
-## PyTorch-GAN
-Collection of PyTorch implementations of Generative Adversarial Network varieties presented in research papers. Model architectures will not always mirror the ones proposed in the papers, but I have chosen to focus on getting the core ideas covered instead of getting every layer configuration right. Contributions and suggestions of GANs to implement are very welcomed.
+## Font Generation GAN
 
-<b>See also:</b> [Keras-GAN](https://github.com/eriklindernoren/Keras-GAN)
+Collection of PyTorch or tensorflow implementations of Font Generation based on Generative Adversarial Network varieties presented in research papers. 
 
 ## Table of Contents
-  * [Installation](#installation)
   * [Implementations](#implementations)
-    + [Auxiliary Classifier GAN](#auxiliary-classifier-gan)
+    + [DG-Font](#DG-Font)
     + [Adversarial Autoencoder](#adversarial-autoencoder)
     + [BEGAN](#began)
     + [BicycleGAN](#bicyclegan)
@@ -43,13 +39,10 @@ Collection of PyTorch implementations of Generative Adversarial Network varietie
     + [Wasserstein GAN GP](#wasserstein-gan-gp)
     + [Wasserstein GAN DIV](#wasserstein-gan-div)
 
-## Installation
-    $ git clone https://github.com/eriklindernoren/PyTorch-GAN
-    $ cd PyTorch-GAN/
-    $ sudo pip3 install -r requirements.txt
+
 
 ## Implementations   
-### Auxiliary Classifier GAN
+### DG-Font
 _Auxiliary Classifier Generative Adversarial Network_
 
 #### Authors
@@ -579,7 +572,7 @@ Trains a classifier on images that have been translated from the source domain (
 ```
 $ cd implementations/pixelda/
 $ python3 pixelda.py
-```  
+```
 | Method       | Accuracy  |
 | ------------ |:---------:|
 | Naive        | 55%       |
