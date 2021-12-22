@@ -22,6 +22,8 @@ Collection of PyTorch or tensorflow implementations of Font Generation based on 
 
     + [MLFont](#MLFont)    ICMR 2021
 
+    + [RD-GAN](#RD-GAN)    ECCV 2020
+
       
 
 
@@ -92,39 +94,19 @@ The automatic generation of Chinese fonts is challenging due to the large quanti
 ![image-20211222110332703](assets/image-20211222110332703.png)
 
 
-#### Run Example
-```
-$ cd data/
-$ bash download_pix2pix_dataset.sh edges2shoes
-$ cd ../implementations/bicyclegan/
-$ python3 bicyclegan.py
-```
 
-<p align="center">
-    <img src="assets/bicyclegan.png" width="480"\>
-</p>
-<p align="center">
-    Various style translations by varying the latent code.
-</p>
-
-
-### Boundary-Seeking GAN
-_Boundary-Seeking Generative Adversarial Networks_
+### RD-GAN
+RD-GAN: Few/Zero-Shot Chinese Character Style Transfer via Radical Decomposition and Rendering
 
 #### Authors
-R Devon Hjelm, Athul Paul Jacob, Tong Che, Adam Trischler, Kyunghyun Cho, Yoshua Bengio
+Yaoxiong Huang1,2 , Mengchao He2 , Lianwen Jin ?1 , and Yongpan Wang2
 
 #### Abstract
-Generative adversarial networks (GANs) are a learning framework that rely on training a discriminator to estimate a measure of difference between a target and generated distributions. GANs, as normally formulated, rely on the generated samples being completely differentiable w.r.t. the generative parameters, and thus do not work for discrete data. We introduce a method for training GANs with discrete data that uses the estimated difference measure from the discriminator to compute importance weights for generated samples, thus providing a policy gradient for training the generator. The importance weights have a strong connection to the decision boundary of the discriminator, and we call our method boundary-seeking GANs (BGANs). We demonstrate the effectiveness of the proposed algorithm with discrete image and character-based natural language generation. In addition, the boundary-seeking objective extends to continuous data, which can be used to improve stability of training, and we demonstrate this on Celeba, Large-scale Scene Understanding (LSUN) bedrooms, and Imagenet without conditioning.
+Style transfer has attracted much interest owing to its various applications. Compared with English character or general artistic style transfer, Chinese character style transfer remains a challenge owing to the large size of the vocabulary(70224 characters in GB18010- 2005) and the complexity of the structure. Recently some GAN-based methods were proposed for style transfer; however, they treated Chinese characters as a whole, ignoring the structures and radicals that compose characters. In this paper, a novel radical decomposition-andrendering-based GAN(RD-GAN) is proposed to utilize the radical-level compositions of Chinese characters and achieves few-shot/zero-shot Chinese character style transfer. The RD-GAN consists of three components: a radical extraction module (REM), radical rendering module (RRM), and multi-level discriminator (MLD). Experiments demonstrate that our method has a powerful few-shot/zero-shot generalization ability by using the radical-level compositions of Chinese characters.
 
-[[Paper]](https://arxiv.org/abs/1702.08431) [[Code]](implementations/bgan/bgan.py)
+[[Paper]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123510154.pdf) 
 
-#### Run Example
-```
-$ cd implementations/bgan/
-$ python3 bgan.py
-```
-
+#### ![image-20211222111002020](assets/image-20211222111002020.png)
 ### Cluster GAN
 _ClusterGAN: Latent Space Clustering in Generative Adversarial Networks_
 
