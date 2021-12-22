@@ -8,6 +8,8 @@ Collection of PyTorch or tensorflow implementations of Font Generation based on 
   * [Implementations](#implementations)
     + [DG-Font](#DG-Font)
 
+    + [StrokeGAN](#StrokeGAN)
+
       
 
 
@@ -29,22 +31,24 @@ Font generation is a challenging problem especially for some writing systems tha
 ![image-20211222101615273](assets/image-20211222101615273.png)
 
 
-### Adversarial Autoencoder
-_Adversarial Autoencoder_
+### StrokeGAN
+StrokeGAN: Reducing Mode Collapse in Chinese Font Generation via Stroke Encoding
 
 #### Authors
-Alireza Makhzani, Jonathon Shlens, Navdeep Jaitly, Ian Goodfellow, Brendan Frey
+Jinshan Zeng1 , Qi Chen1 , Yunxin Liu1 , Mingwen Wang1∗ , Yuan Yao
+
+ School of Computer and Information Engineering and Institute of Artificial Intelligence, Jiangxi Normal University, Nanchang, China
+
+
 
 #### Abstract
-n this paper, we propose the "adversarial autoencoder" (AAE), which is a probabilistic autoencoder that uses the recently proposed generative adversarial networks (GAN) to perform variational inference by matching the aggregated posterior of the hidden code vector of the autoencoder with an arbitrary prior distribution. Matching the aggregated posterior to the prior ensures that generating from any part of prior space results in meaningful samples. As a result, the decoder of the adversarial autoencoder learns a deep generative model that maps the imposed prior to the data distribution. We show how the adversarial autoencoder can be used in applications such as semi-supervised classification, disentangling style and content of images, unsupervised clustering, dimensionality reduction and data visualization. We performed experiments on MNIST, Street View House Numbers and Toronto Face datasets and show that adversarial autoencoders achieve competitive results in generative modeling and semi-supervised classification tasks.
+The generation of stylish Chinese fonts is an important problem involved in many applications. Most of existing generation methods are based on the deep generative models, particularly, the generative adversarial networks (GAN) based models. However, these deep generative models may suffer from the mode collapse issue, which significantly degrades the diversity and quality of generated results. In this paper, we introduce a one-bit stroke encoding to capture the key mode information of Chinese characters and then incorporate it into CycleGAN, a popular deep generative model for Chinese font generation. As a result we propose an efficient method called StrokeGAN, mainly motivated by the observation that the stroke encoding contains amount of mode information of Chinese characters. In order to reconstruct the one-bit stroke encoding of the associated generated characters, we introduce a stroke-encoding reconstruction loss imposed on the discriminator. Equipped with such one-bit stroke encoding and stroke-encoding reconstruction loss, the mode collapse issue of CycleGAN can be significantly alleviated, with an improved preservation of strokes and diversity of generated characters. The effectiveness of StrokeGAN is demonstrated by a series of generation tasks over nine datasets with different fonts. The numerical results demonstrate that StrokeGAN generally outperforms the state-of-the-art methods in terms of content and recognition accuracies, as well as certain stroke error, and also generates more realistic characters
 
-[[Paper]](https://arxiv.org/abs/1511.05644) [[Code]](implementations/aae/aae.py)
+[[Paper]](https://www.aaai.org/AAAI21Papers/AAAI-6293.ZengJ.pdf) [[Code]](https://github.com/JinshanZeng/StrokeGAN)
 
-#### Run Example
-```
-$ cd implementations/aae/
-$ python3 aae.py
-```
+
+
+![image-20211222103543457](assets/image-20211222103543457.png)
 
 ### BEGAN
 _BEGAN: Boundary Equilibrium Generative Adversarial Networks_
