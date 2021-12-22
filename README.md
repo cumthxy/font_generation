@@ -6,9 +6,11 @@ Collection of PyTorch or tensorflow implementations of Font Generation based on 
 
 ## Table of Contents
   * [Implementations](#implementations)
-    + [DG-Font](#DG-Font)
+    + [DG-Font](#DG-Font)     CVPR2021
 
-    + [StrokeGAN](#StrokeGAN)
+    + [StrokeGAN](#StrokeGAN)      AAAI  2021
+
+    + [ZiGAN](#ZiGAN)     ACM Multimedia 2021
 
       
 
@@ -50,22 +52,20 @@ The generation of stylish Chinese fonts is an important problem involved in many
 
 ![image-20211222103543457](assets/image-20211222103543457.png)
 
-### BEGAN
-_BEGAN: Boundary Equilibrium Generative Adversarial Networks_
+### ZiGAN
+ZiGAN:Fine-grained Chinese Calligraphy Font Generation via a Few-shot Style Transfer Approach
 
 #### Authors
-David Berthelot, Thomas Schumm, Luke Metz
+Qi Wen, Shuang Li, Bingfeng Han, Yi Yuan
 
 #### Abstract
-We propose a new equilibrium enforcing method paired with a loss derived from the Wasserstein distance for training auto-encoder based Generative Adversarial Networks. This method balances the generator and discriminator during training. Additionally, it provides a new approximate convergence measure, fast and stable training and high visual quality. We also derive a way of controlling the trade-off between image diversity and visual quality. We focus on the image generation task, setting a new milestone in visual quality, even at higher resolutions. This is achieved while using a relatively simple model architecture and a standard training procedure.
+Chinese character style transfer is a very challenging problem because of the complexity of the glyph shapes or underlying structures and large numbers of existed characters, when comparing with English letters. Moreover, the handwriting of calligraphy masters has a more irregular stroke and is difficult to obtain in real-world scenarios. Recently, several GAN-based methods have been proposed for font synthesis, but some of them require numerous reference data and the other part of them have cumbersome preprocessing steps to divide the character into different parts to be learned and transferred separately. In this paper, we propose a simple but powerful end-to-end Chinese calligraphy font generation framework ZiGAN, which does not require any manual operation or redundant preprocessing to generate fine-grained target style characters with few-shot references. To be specific, a few paired samples from different character styles are leveraged to attain fine-grained correlation between structures underlying different glyphs. To capture valuable style knowledge in target and strengthen the coarse-grained understanding of character content, we utilize multiple unpaired samples to align the feature distributions belonging to different character styles. By doing so, only a few target Chinese calligraphy characters are needed to generated expected style transferred characters. Experiments demonstrate that our method has a state-of-the-art generalization ability in few-shot Chinese character style transfer
 
-[[Paper]](https://arxiv.org/abs/1703.10717) [[Code]](implementations/began/began.py)
+[[Paper]](https://arxiv.org/pdf/2108.03596.pdf) [](implementations/began/began.py)
 
-#### Run Example
-```
-$ cd implementations/began/
-$ python3 began.py
-```
+
+
+![image-20211222105635304](assets/image-20211222105635304.png)
 
 ### BicycleGAN
 _Toward Multimodal Image-to-Image Translation_
