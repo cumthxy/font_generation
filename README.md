@@ -109,6 +109,3 @@ Style transfer has attracted much interest owing to its various applications. Co
 [[Paper]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123510154.pdf) 
 
 #### ![image-20211222111002020](assets/image-20211222111002020.png)
-<p align="center">
-    <img src="assets/wgan_div.png" width="240"\>
-</p>
