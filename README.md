@@ -4,6 +4,14 @@
 
 Collection of PyTorch or tensorflow implementations of Font Generation based on Generative Adversarial Network varieties presented in research papers. 
 
+
+
+## blog
+
+  * [Implementations](#implementations)
+    + https://yuanyi.pub/
+    + https://shuangli.xyz/
+
 ## Table of Contents
   * [Implementations](#implementations)
     + [DG-Font](#DG-Font)     CVPR2021
@@ -11,6 +19,8 @@ Collection of PyTorch or tensorflow implementations of Font Generation based on 
     + [StrokeGAN](#StrokeGAN)      AAAI  2021
 
     + [ZiGAN](#ZiGAN)     ACM Multimedia 2021
+
+    + [MLFont](#MLFont)    ICMR 2021
 
       
 
@@ -67,16 +77,17 @@ Chinese character style transfer is a very challenging problem because of the co
 
 ![image-20211222105635304](assets/image-20211222105635304.png)
 
-### BicycleGAN
-_Toward Multimodal Image-to-Image Translation_
+# MLFont
+
+# MLFont: Few-Shot Chinese Font Generation via Deep Meta-Learning
 
 #### Authors
-Jun-Yan Zhu, Richard Zhang, Deepak Pathak, Trevor Darrell, Alexei A. Efros, Oliver Wang, Eli Shechtman
+*Chen, Xu and Wu, Lei and He, Minggang and Meng, Lei and Meng, Xiangxu*
 
 #### Abstract
-Many image-to-image translation problems are ambiguous, as a single input image may correspond to multiple possible outputs. In this work, we aim to model a \emph{distribution} of possible outputs in a conditional generative modeling setting. The ambiguity of the mapping is distilled in a low-dimensional latent vector, which can be randomly sampled at test time. A generator learns to map the given input, combined with this latent code, to the output. We explicitly encourage the connection between output and the latent code to be invertible. This helps prevent a many-to-one mapping from the latent code to the output during training, also known as the problem of mode collapse, and produces more diverse results. We explore several variants of this approach by employing different training objectives, network architectures, and methods of injecting the latent code. Our proposed method encourages bijective consistency between the latent encoding and output modes. We present a systematic comparison of our method and other variants on both perceptual realism and diversity.
+The automatic generation of Chinese fonts is challenging due to the large quantity and complex structure of Chinese characters. When there are insufficient reference samples for the target font, existing deep learning-based methods cannot avoid overfitting caused by too few samples, resulting in blurred glyphs and incomplete strokes. To address these problems, this paper proposes a novel deep meta-learning-based font generation method (MLFont) for few-shot Chinese font generation, which leverages existing fonts to improve the generalization capability of the model for new fonts. Existing deep meta-learning methods mainly focus on few-shot image classification. To apply meta-learning to font generation, we present a meta-training strategy based on Model-Agnostic Meta-Learning (MAML) and a task organization method for font generation. The meta-training makes the font generator easy to fine-tune for new font generation tasks. Through random font generation tasks and extraction of glyph content and style separately, the font generator learns the prior knowledge of character structure in the meta-training stage, and then quickly adapts to the generation of new fonts with a few samples by fine-tuning of adversarial training. Extensive experiments demonstrate that our method outperforms the state-of-the-art methods with more complete strokes and less noise in the generated character images.
 
-[[Paper]](https://arxiv.org/abs/1711.11586) [[Code]](implementations/bicyclegan/bicyclegan.py)
+[[Paper]](./assets/3460426.3463606.pdf) 
 
 <p align="center">
     <img src="assets/bicyclegan_architecture.jpg" width="800"\>
