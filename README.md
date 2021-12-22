@@ -89,9 +89,8 @@ The automatic generation of Chinese fonts is challenging due to the large quanti
 
 [[Paper]](./assets/3460426.3463606.pdf) 
 
-<p align="center">
-    <img src="assets/bicyclegan_architecture.jpg" width="800"\>
-</p>
+![image-20211222110332703](assets/image-20211222110332703.png)
+
 
 #### Run Example
 ```
