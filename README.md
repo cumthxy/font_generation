@@ -26,6 +26,8 @@ Collection of PyTorch or tensorflow implementations of Font Generation based on 
 
     + [RD-GAN](#RD-GAN)    ECCV 2020
 
+    + [Few-shot Font Style Transfer between Different Languages](#Few-shot Font Style Transfer between Different Languages)    WACV 2021
+
       
 
 
@@ -109,3 +111,20 @@ Style transfer has attracted much interest owing to its various applications. Co
 [[Paper]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123510154.pdf) 
 
 #### ![image-20211222111002020](assets/image-20211222111002020.png)
+### Few-shot Font Style Transfer between Different Languages
+
+Few-shot Font Style Transfer between Different Languages
+
+#### Authors
+
+Chenhao Li, Yuta Taniguchi, Min Lu, Shin’ichi Konomi HDI Lab, Kyushu University
+
+#### Abstract
+
+In this paper, we propose a novel model FTransGAN that can transfer font styles between different languages by observing only a few samples. The automatic generation of a new font library is a challenging task and has been attracting many researchers’ interests. Most previous works addressed this problem by transferring the style of the given subset to the content of unseen ones. Nevertheless, they only focused on the font style transfer in the same language. In many tasks, we need to learn the font information from one language and then apply it to other languages. It’s difficult for the existing methods to do such tasks. To solve this problem, we specifically design our network into a multilevel attention form to capture both local and global features of the style images. To verify the generative ability of our model, we construct an experimental font dataset which includes 847 fonts, each of them containing English and Chinese characters with the same style. Experimental results show that compared with the state-of-the-art models, our model generates 80.3% of all user preferred images.
+
+[[Paper]](https://openaccess.thecvf.com/content/WACV2021/papers/Li_Few-Shot_Font_Style_Transfer_Between_Different_Languages_WACV_2021_paper.pdf) [[Code]](https://github.com/ligoudaner377/font_translator_gan) 
+
+
+
+![image-20211222114623576](assets/image-20211222114623576.png)
