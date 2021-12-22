@@ -26,9 +26,7 @@ Font generation is a challenging problem especially for some writing systems tha
 
 [[Paper]](https://arxiv.org/abs/2104.03064) [[Code]](https://github.com/ecnuycxie/DG-Font)
 
-![image-20211221201016751](https://gitee.com/cumthxy/Image/raw/master/img/image-20211221201016751.png)
-
-
+![image-20211222101615273](assets/image-20211222101615273.png)
 
 
 ### Adversarial Autoencoder
